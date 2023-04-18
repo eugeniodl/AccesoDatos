@@ -10,21 +10,20 @@ string queryString = "SELECT ProductID, UnitPrice, ProductName " +
 // Especifica el valor del parámetro
 int paramValue = 30;
 
-// Crea y abre la conexión en un bloque using.
-// Esto garantiza que todos los recursos se cerrarán
+// Crea y abre la conexión en un bloque using
+// Esto garantiza que todos los recursos se cerrarán 
 // y eliminarán cuando el código salga
 using(SqlConnection connection = new SqlConnection(connectionString))
 {
-    // Crea los objetos Command y Parameters
+    // Crea los objetos Commad y Parameters
     SqlCommand command = new SqlCommand(queryString, connection);
     command.Parameters.AddWithValue("@pricePoint", paramValue);
 
-    // Abra la conexión en un bloque try/catch
+    // Abra la conexión en un bloque try/catch.
     // Cree y ejecute el DataReader, escribiendo
-    // el conjunto de resultados en la ventana de la consola.
+    // el conjunto de resultados en la ventana de consola.
     try
     {
-
         connection.Open();
         SqlDataReader reader = command.ExecuteReader();
         while (reader.Read())
@@ -34,7 +33,6 @@ using(SqlConnection connection = new SqlConnection(connectionString))
     }
     catch (Exception ex)
     {
-
         Console.WriteLine(ex.Message);
     }
     Console.ReadLine();
