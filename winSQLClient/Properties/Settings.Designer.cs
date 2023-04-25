@@ -33,5 +33,16 @@ namespace winSQLClient.Properties {
                 return ((string)(this["Connection"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KQLF513\\SQLSERVER2019;Initial Catalog=Northwind;User ID=sa;Pa" +
+            "ssword=123456")]
+        public string Con {
+            get {
+                return ((string)(this["Con"]));
+            }
+        }
     }
 }
