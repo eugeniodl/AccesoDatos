@@ -14,7 +14,7 @@ namespace winSQLClient
 {
     public partial class frmProducts : Form
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["winSQLClient.Properties.Settings.Connection"].ConnectionString;
 
         public frmProducts()
         {
@@ -25,14 +25,11 @@ namespace winSQLClient
         private void GetProducts()
         {
             string queryString = "SELECT ProductID, UnitPrice, ProductName " +
-    "FROM Products WHERE UnitPrice > @pricePoint " +
-    "ORDER BY UnitPrice DESC;";
+    "FROM Products ORDER BY UnitPrice DESC;";
 
-            int paramValue = 30;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.AddWithValue("@pricePoint", paramValue);
 
                 try
                 {
@@ -41,6 +38,94 @@ namespace winSQLClient
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
                     dgvProducts.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvProducts.Rows[e.RowIndex];
+                txtProductID.Text = row.Cells["ProductID"].Value.ToString();
+                txtProductName.Text = row.Cells["ProductName"].Value.ToString();
+                txtUnitPrice.Text = row.Cells["UnitPrice"].Value.ToString();
+            }
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            InsertProducts();
+        }
+
+        private void InsertProducts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    string queryString = "INSERT INTO Products(ProductName, UnitPrice) VALUES('" +
+                        txtProductName.Text + "', " + txtUnitPrice.Text + ")";
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Producto guardado correctamente");
+                    GetProducts();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            UpdateProducts();
+        }
+
+        private void UpdateProducts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    string queryString = "UPDATE Products SET ProductName = '" + txtProductName.Text
+                        + "', UnitPrice = " + txtUnitPrice.Text + " WHERE ProductID = " + txtProductID.Text;
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Producto actualizado correctamente");
+                    GetProducts();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DeleteProducts();
+        }
+
+        private void DeleteProducts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    string queryString = "DELETE FROM Products WHERE ProductID = " + txtProductID.Text;
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Producto eliminado correctamente");
+                    GetProducts();
                 }
                 catch (Exception ex)
                 {
