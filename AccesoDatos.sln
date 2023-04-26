@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploSQLClient01", "EjemploSQLClient01\EjemploSQLClient01.csproj", "{D5664B4A-7B03-4C20-9FB2-FE236556C94A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winSQLClient", "winSQLClient\winSQLClient.csproj", "{01AC4EF0-2997-4F4D-83E2-E00B6B9E3879}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winSQLClient", "winSQLClient\winSQLClient.csproj", "{01AC4EF0-2997-4F4D-83E2-E00B6B9E3879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindEF", "NorthwindEF\NorthwindEF.csproj", "{E96F49E6-8A9C-4990-B07B-E625D3C939B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{01AC4EF0-2997-4F4D-83E2-E00B6B9E3879}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01AC4EF0-2997-4F4D-83E2-E00B6B9E3879}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01AC4EF0-2997-4F4D-83E2-E00B6B9E3879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E96F49E6-8A9C-4990-B07B-E625D3C939B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E96F49E6-8A9C-4990-B07B-E625D3C939B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96F49E6-8A9C-4990-B07B-E625D3C939B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E96F49E6-8A9C-4990-B07B-E625D3C939B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
