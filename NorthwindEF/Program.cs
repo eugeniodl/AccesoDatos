@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NorthwindEF.Models;
+using NorthwindEF.Data;
 
 using (var context = new NorthwindContext())
 {
@@ -24,7 +24,7 @@ using (var context = new NorthwindContext())
 
     foreach (var product in context.Products.ToList())
     {
-        Console.WriteLine("Nombre del producto: {0}, Precio unitario: {1}", 
+        Console.WriteLine("Nombre del producto: {0}, Precio unitario: {1}",
             product.ProductName, product.UnitPrice);
     }
 }

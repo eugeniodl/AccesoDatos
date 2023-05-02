@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace NorthwindEF.Models;
+namespace winNorthwindEF.Models;
 
 [Index("CategoryName", Name = "CategoryName")]
 public partial class Category

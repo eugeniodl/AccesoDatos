@@ -4,18 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace NorthwindEF.Models;
+namespace winNorthwindEF.Models;
 
-[Index("City", Name = "City")]
 [Index("CompanyName", Name = "CompanyName")]
 [Index("PostalCode", Name = "PostalCode")]
-[Index("Region", Name = "Region")]
-public partial class Customer
+public partial class Supplier
 {
     [Key]
-    [Column("CustomerID")]
-    [StringLength(5)]
-    public string CustomerId { get; set; } = null!;
+    [Column("SupplierID")]
+    public int SupplierId { get; set; }
 
     [StringLength(40)]
     public string CompanyName { get; set; } = null!;
@@ -46,4 +43,9 @@ public partial class Customer
 
     [StringLength(24)]
     public string? Fax { get; set; }
+
+    public string? HomePage { get; set; }
+
+    [InverseProperty("Supplier")]
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }
