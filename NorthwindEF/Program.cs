@@ -1,4 +1,4 @@
-﻿using NorthwindEF.Models;
+﻿using NorthwindEF.Data;
 
 using (var context = new NorthwindContext())
 {
@@ -22,7 +22,7 @@ using (var context = new NorthwindContext())
 
     foreach (var item in context.Products.ToList())
     {
-        Console.WriteLine("Nombre del producto: {0}, Precio unitario: {1}",item.ProductName,
+        Console.WriteLine("Nombre del producto: {0}, Precio unitario: {1}", item.ProductName,
             item.UnitPrice);
     }
 }
