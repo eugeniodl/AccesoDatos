@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NorthwindEF.Data;
 using NorthwindEF.Models;
 
 using (var db = new NorthwindContext())
@@ -17,9 +18,9 @@ using (var db = new NorthwindContext())
     //db.SaveChanges();
 
     // Para eliminar
-    var p = db.Products.Find(78);
-    db.Remove(p);
-    db.SaveChanges();
+    //    var p = db.Products.Find(78);
+    //    db.Remove(p);
+    //    db.SaveChanges();
 
     var productos = db.Products.ToList();
     foreach (var producto in productos)
