@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winSQLClient", "winSQLClien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindEF", "NorthwindEF\NorthwindEF.csproj", "{669A9BA6-61C5-4084-A03A-2AB6C038E053}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winNorthwindEF", "winNorthwindEF\winNorthwindEF.csproj", "{B8ACF435-A244-4A31-96A9-4F6CFA4927F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winNorthwindEF", "winNorthwindEF\winNorthwindEF.csproj", "{B8ACF435-A244-4A31-96A9-4F6CFA4927F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolEF", "SchoolEF\SchoolEF.csproj", "{C49D632C-6ACC-460A-BDA3-7AE6958E0782}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B8ACF435-A244-4A31-96A9-4F6CFA4927F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8ACF435-A244-4A31-96A9-4F6CFA4927F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8ACF435-A244-4A31-96A9-4F6CFA4927F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C49D632C-6ACC-460A-BDA3-7AE6958E0782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49D632C-6ACC-460A-BDA3-7AE6958E0782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49D632C-6ACC-460A-BDA3-7AE6958E0782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49D632C-6ACC-460A-BDA3-7AE6958E0782}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
