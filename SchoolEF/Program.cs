@@ -21,4 +21,19 @@ using (var context = new SchoolContext())
     context.SaveChanges();
 
     // Mostrar estudiantes del Primero B
+    var innerJoin = context.Students.Join(
+    context.Grades,
+    student => student.GradeId,
+    grade => grade.GradeId,
+    (student, grade) => new
+    {
+        StudentFirstName = student.FirstName,
+        StudentLastName = student.LastName,
+        GradeName = grade.GradeName,
+        GradeSection = grade.Section
+    }).Where(grade => grade.GradeName == "Primero" && grade.GradeSection == "B");
+
+    foreach (var item in innerJoin.ToList())
+        Console.WriteLine($"Nombre: {item.StudentFirstName} {item.StudentLastName}\t" +
+            $"Grado: {item.GradeName} {item.GradeSection}");
 }
