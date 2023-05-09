@@ -25,11 +25,23 @@ using (var db = new SchoolContext())
     //db.Students.Add(std);
     //db.SaveChanges();
 
-    var studentWithGrade = db.Students
-                             .Where(s => s.FirstName == "Bill")
-                             .Include(s => s.Grade)
-                             .FirstOrDefault();
-
     // Estudiantes de Primero A
+    var innerJoin = db.Students.Join(
+    db.Grades,
+    s => s.StudentId,
+    g => g.Id,
+    (s, g) => new
+    {
+        StudentFirstName = s.FirstName,
+        StudentLastName = s.LastName,
+        GradeName = g.GradeName,
+        Section = g.Section
+    }).Where(g => g.GradeName == "Primero" && g.Section == "A");
+
+    foreach (var inner in innerJoin)
+    {
+        Console.WriteLine($"Nombre del estudiante: {inner.StudentFirstName} {inner.StudentLastName}\t" +
+            $"Grado: {inner.GradeName} {inner.Section}");
+    }
 
 }
