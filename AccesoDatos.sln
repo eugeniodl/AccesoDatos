@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindEF", "NorthwindEF\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winNorthwindEF", "winNorthwindEF\winNorthwindEF.csproj", "{C54D7F8C-5DFE-45C8-BE97-96FFD0DDAA87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolEF", "SchoolEF\SchoolEF.csproj", "{78559F70-54C5-4410-91A3-53DFBA8FA868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolEF", "SchoolEF\SchoolEF.csproj", "{78559F70-54C5-4410-91A3-53DFBA8FA868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploTransaccion02", "EjemploTransaccion02\EjemploTransaccion02.csproj", "{45AF4FDE-00FB-4D1A-A3D6-47E8D89398D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploTransaccion01", "EjemploTransaccion01\EjemploTransaccion01.csproj", "{C08CB154-07B9-4B44-B953-1D67747403CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{78559F70-54C5-4410-91A3-53DFBA8FA868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78559F70-54C5-4410-91A3-53DFBA8FA868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78559F70-54C5-4410-91A3-53DFBA8FA868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AF4FDE-00FB-4D1A-A3D6-47E8D89398D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AF4FDE-00FB-4D1A-A3D6-47E8D89398D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AF4FDE-00FB-4D1A-A3D6-47E8D89398D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AF4FDE-00FB-4D1A-A3D6-47E8D89398D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08CB154-07B9-4B44-B953-1D67747403CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08CB154-07B9-4B44-B953-1D67747403CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08CB154-07B9-4B44-B953-1D67747403CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08CB154-07B9-4B44-B953-1D67747403CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
