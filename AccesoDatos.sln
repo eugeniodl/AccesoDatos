@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winNorthwindEF", "winNorthw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolEF", "SchoolEF\SchoolEF.csproj", "{DFF1FB10-5138-444D-9F69-F3A7520AC39C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploTransaccion", "EjemploTransaccion\EjemploTransaccion.csproj", "{34D59502-7A2A-4BBE-AA40-30EE44DA2855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DFF1FB10-5138-444D-9F69-F3A7520AC39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFF1FB10-5138-444D-9F69-F3A7520AC39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFF1FB10-5138-444D-9F69-F3A7520AC39C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D59502-7A2A-4BBE-AA40-30EE44DA2855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D59502-7A2A-4BBE-AA40-30EE44DA2855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D59502-7A2A-4BBE-AA40-30EE44DA2855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D59502-7A2A-4BBE-AA40-30EE44DA2855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
