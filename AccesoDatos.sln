@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindEF", "NorthwindEF\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winNorthwindEF", "winNorthwindEF\winNorthwindEF.csproj", "{B8ACF435-A244-4A31-96A9-4F6CFA4927F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolEF", "SchoolEF\SchoolEF.csproj", "{C49D632C-6ACC-460A-BDA3-7AE6958E0782}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolEF", "SchoolEF\SchoolEF.csproj", "{C49D632C-6ACC-460A-BDA3-7AE6958E0782}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploTransaccion01", "EjemploTransaccion01\EjemploTransaccion01.csproj", "{09ABAE7B-351A-4D6D-82B8-A0DF25A9BD0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploTransaccion02", "EjemploTransaccion02\EjemploTransaccion02.csproj", "{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{C49D632C-6ACC-460A-BDA3-7AE6958E0782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C49D632C-6ACC-460A-BDA3-7AE6958E0782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C49D632C-6ACC-460A-BDA3-7AE6958E0782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09ABAE7B-351A-4D6D-82B8-A0DF25A9BD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09ABAE7B-351A-4D6D-82B8-A0DF25A9BD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09ABAE7B-351A-4D6D-82B8-A0DF25A9BD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09ABAE7B-351A-4D6D-82B8-A0DF25A9BD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
