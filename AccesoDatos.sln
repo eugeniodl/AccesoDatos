@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolEF", "SchoolEF\School
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploTransaccion", "EjemploTransaccion\EjemploTransaccion.csproj", "{34D59502-7A2A-4BBE-AA40-30EE44DA2855}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploTransaccion02", "EjemploTransaccion02\EjemploTransaccion02.csproj", "{6048B4A8-4C1F-459C-B1B4-D89FA0B60CBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{34D59502-7A2A-4BBE-AA40-30EE44DA2855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34D59502-7A2A-4BBE-AA40-30EE44DA2855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34D59502-7A2A-4BBE-AA40-30EE44DA2855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6048B4A8-4C1F-459C-B1B4-D89FA0B60CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6048B4A8-4C1F-459C-B1B4-D89FA0B60CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6048B4A8-4C1F-459C-B1B4-D89FA0B60CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6048B4A8-4C1F-459C-B1B4-D89FA0B60CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
