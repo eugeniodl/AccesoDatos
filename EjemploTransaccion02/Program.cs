@@ -21,7 +21,7 @@ var sqlAccount1Fund = "SELECT (Sum(Credit) - Sum(Debit)) as Saldo FROM Accounts 
 var sqlWithdrawCredit = "INSERT INTO Accounts(AccountNumber, Debit, Credit) VALUES(@OriginAccount, @Debit, 0)";
 
 // Consulta para depositar el dinero en la cuenta destino
-var sqlFundCredit = "INSERT INTO Accounts(AccountNumber, Debit, Credit) VALUES(@DestinationAccount, 0, @Credit)";
+var sqlFundCredit = "INSERT INTO Accounts(AccountNumbe, Debit, Credit) VALUES(@DestinationAccount, 0, @Credit)";
 
 try
 {
