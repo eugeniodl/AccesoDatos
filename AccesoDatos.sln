@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolEF", "SchoolEF\School
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploTransaccion01", "EjemploTransaccion01\EjemploTransaccion01.csproj", "{09ABAE7B-351A-4D6D-82B8-A0DF25A9BD0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploTransaccion02", "EjemploTransaccion02\EjemploTransaccion02.csproj", "{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploTransaccion02", "EjemploTransaccion02\EjemploTransaccion02.csproj", "{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{7020B49F-59A6-4B89-AB55-0A07C7A5D650}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D34BB81B-2AE3-415A-9EC6-B60747DC43B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7020B49F-59A6-4B89-AB55-0A07C7A5D650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7020B49F-59A6-4B89-AB55-0A07C7A5D650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7020B49F-59A6-4B89-AB55-0A07C7A5D650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7020B49F-59A6-4B89-AB55-0A07C7A5D650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

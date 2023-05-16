@@ -35,11 +35,31 @@ try
     var funds = Convert.ToDecimal(command1.ExecuteScalar());
     Console.WriteLine($"Total Origen Fondo Inicial: {funds:C}");
 
+    if(funds < quantityToTransfer)
+    {
+        trans.Rollback();
+        Console.WriteLine($"Fondos insuficientes en la cuenta {X_ORIGIN_ACCOUNT}: {funds:C}. ¡Transacción abortada!");
+        Console.ReadLine();
+        return;
+    }
+
+    // Los fondos son correctos, retirar los fondos de la cuenta de origen
+    command2.Parameters.AddWithValue("@Debit", quantityToTransfer);
+    command2.Parameters.AddWithValue("@OriginAccount", X_ORIGIN_ACCOUNT);
+    var result = command2.ExecuteNonQuery();
+
+    // Deposita el fondo en la cuenta de destino
+    command3.Parameters.AddWithValue("@Credit", quantityToTransfer);
+    command3.Parameters.AddWithValue("@DestinationAccount", X_DESTINATION_ACCOUNT);
+    result = command3.ExecuteNonQuery();
+
     trans.Commit();
+    Console.WriteLine("Fondos transferidos con éxito");
 }
 catch (Exception ex)
 {
     trans.Rollback();
+    Console.WriteLine($"Ha ocurrido un error, los fondos no se ha transferido: {ex.Message}");
 }
 finally
 {
