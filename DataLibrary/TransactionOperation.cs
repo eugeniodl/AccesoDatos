@@ -91,7 +91,7 @@ namespace DataLibrary
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
+                    //transaction.Rollback();
                     Console.WriteLine(ex.Message);
                     return false;
                 }
