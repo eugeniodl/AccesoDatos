@@ -6,7 +6,7 @@ var t1 = transact1.ExecuteTransaction(true, 5000, System.Data.IsolationLevel.Rea
 
 // Comienza retraso de la transacción 2
 Thread.Sleep(1500);
-var t2 = transact2.ExecuteTransaction(true, 0, System.Data.IsolationLevel.ReadUncommitted, "T2");
+var t2 = transact2.ExecuteTransaction(true, 0, System.Data.IsolationLevel.ReadCommitted, "T2");
 Task.WhenAll(t1, t2).ContinueWith(t =>
 {
     Console.WriteLine($"Transaction1: {t1.Result} Transaction2: {t2.Result}");
