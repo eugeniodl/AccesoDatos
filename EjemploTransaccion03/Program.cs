@@ -2,18 +2,21 @@
 using System.Data;
 using System.Data.SqlClient;
 
-string connectionString = ConfigurationManager.ConnectionStrings["connstring"].ToString();
+string connStr1 = ConfigurationManager.ConnectionStrings["connStr1"].ToString();
+string connStr2 = ConfigurationManager.ConnectionStrings["connStr2"].ToString();
 
-using(var conn = new SqlConnection(connectionString))
+using(var conn1 = new SqlConnection(connStr1))
+using(var conn2 = new SqlConnection(connStr2))
 {
-    conn.Open();
+    conn1.Open();
+    conn2.Open();
 
     // Iniciar la transacción principal
-    SqlTransaction transaccion1 = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+    SqlTransaction transaccion1 = conn1.BeginTransaction(IsolationLevel.ReadCommitted);
     try
     {
         // Crea un comando para la transacción principal
-        SqlCommand command1 = conn.CreateCommand();
+        SqlCommand command1 = conn1.CreateCommand();
         command1.Transaction = transaccion1;
 
         // Ejecutar una serie de comandos dentro de la transacción principal
@@ -21,12 +24,12 @@ using(var conn = new SqlConnection(connectionString))
         command1.ExecuteNonQuery();
 
         // Iniciar la transacción anidada
-        SqlTransaction transaction2 = conn.BeginTransaction(IsolationLevel.ReadUncommitted);
+        SqlTransaction transaction2 = conn2.BeginTransaction(IsolationLevel.ReadUncommitted);
 
         try
         {
             // Crear un comando para la transacción anidada
-            SqlCommand command2 = conn.CreateCommand();
+            SqlCommand command2 = conn2.CreateCommand();
             command2.Transaction = transaction2;
 
             // Ejecutar una serie de comandos dentro de la transacción anidada
