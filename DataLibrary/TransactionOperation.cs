@@ -17,7 +17,7 @@ namespace DataLibrary
         const string sqlWithdrawCredit = "INSERT INTO Accounts(AccountNumber, Debit, Credit) VALUES(@OriginAccount, @Debit, 0)";
 
         // Consulta para depositar el dinero en la cuenta destino
-        const string sqlFundCredit = "INSERT INTO Accounts(AccountNumbe, Debit, Credit) VALUES(@DestinationAccount, 0, @Credit)";
+        const string sqlFundCredit = "INSERT INTO Accounts(AccountNumber, Debit, Credit) VALUES(@DestinationAccount, 0, @Credit)";
 
         public TransactionOperation(int origin, int destination, decimal amount)
         {
@@ -49,7 +49,7 @@ namespace DataLibrary
 
                 // Prepara para leer la disponiblidad de dinero en origen
                 var command = new SqlCommand(sqlAccount1Fund, conn);
-                command.Parameters.AddWithValue("OriginAccount", originAccount);
+                command.Parameters.AddWithValue("@OriginAccount", originAccount);
 
                 // Abrir la conexión con la BD
                 conn.Open();
@@ -87,7 +87,7 @@ namespace DataLibrary
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
+                    //transaction.Rollback();
                     Console.WriteLine(ex.Message);
                     return false;
                 }
