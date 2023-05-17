@@ -52,7 +52,7 @@ namespace DataLibrary
                 // Crear la conexión
                 var conn = new SqlConnection(connStr1);
 
-                // Prepara para leer la disponiilidad de dinero en origen
+                // Prepara para leer la disponibilidad de dinero en origen
                 var command = new SqlCommand(sqlAccount1Fund, conn);
                 command.Parameters.AddWithValue("@OriginAccount", _originAccount);
 

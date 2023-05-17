@@ -11,4 +11,4 @@ Task.WhenAll(t1, t2).ContinueWith(t =>
 {
     Console.WriteLine($"Transaction1: {t1.Result} Transaction2: {t2.Result}");
 });
-Console.WriteLine();
+Console.ReadLine();
