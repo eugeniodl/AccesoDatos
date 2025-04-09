@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 
 public class TablaRepository : IRepository<Tabla>
 {
@@ -8,37 +8,41 @@ public class TablaRepository : IRepository<Tabla>
     {
         _connectionString = connectionString;
     }
+
     public IEnumerable<Tabla> GetAll()
     {
-        List<Tabla> list = new List<Tabla>();
+        var lista = new List<Tabla>();
 
         try
         {
-            using (SqlConnection connection =
-                new SqlConnection(_connectionString))
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            using var cmd = new SqlCommand("SELECT IdRow, Nombre, Apellido FROM Tabla", connection);
+            using var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
             {
-                connection.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Tabla", connection);
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                var tabla = new Tabla
                 {
-                    while (reader.Read())
-                    {
-                        Tabla tabla = new Tabla
-                        {
-                            IdRow = Convert.ToInt32(reader["IdRow"]),
-                            Nombre = reader["Nombre"].ToString(),
-                            Apellido = reader["Apellido"].ToString()
-                        };
-                        list.Add(tabla);
-                    }
-                }
+                    IdRow = reader.GetInt32(reader.GetOrdinal("IdRow")),
+                    Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
+                    Apellido = reader.GetString(reader.GetOrdinal("Apellido"))
+                };
+                lista.Add(tabla);
             }
+        }
+        catch (SqlException sqlEx)
+        {
+            Console.Error.WriteLine($"Error de SQL al recuperar datos: {sqlEx.Message}");
+            throw;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error al recuperar Tabla {ex.Message}");
+            Console.Error.WriteLine($"Error inesperado: {ex.Message}");
+            throw;
         }
-        return list;
+
+        return lista;
     }
 }
-
