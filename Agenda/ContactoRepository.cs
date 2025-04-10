@@ -1,50 +1,88 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace Agenda
+
+using System.Data.SqlClient;
+
+public class ContactoRepository : IRepository<Contacto>
 {
-    public class ContactoRepository : IRepository<Contacto>
+    private readonly string _connectionString;
+
+    public ContactoRepository(string connectionString)
     {
-        private readonly string _connectionString;
+        _connectionString = connectionString;
+    }
 
-        public ContactoRepository(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+    public void Delete(int id)
+    {
+        const string query = "DELETE FROM Contactos WHERE Id = @id";
 
-        public IEnumerable<Contacto> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        ExecuteNonQuery(query, 
+            cmd => cmd.Parameters.AddWithValue("@id", id));
+    }
 
-        public Contacto GetValue(int id)
+    private void ExecuteNonQuery(string query, 
+        Action<SqlCommand> configureCommad)
+    {
+        try
         {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(Contacto entity)
-        {
-            const string sql = @"
-                INSERT INTO Contactos(Nombre,Apellido,FechaNacimiento,Telefono,Email)
-                VALUES (@nombre,@apellido,@fechanacimiento,@telefono,@email)";
-
             using var connection = new SqlConnection(_connectionString);
+            using var command = connection.CreateCommand();
+            configureCommad(command);
             connection.Open();
-
-            using var command = new SqlCommand(sql, connection);
+            command.ExecuteNonQuery();
         }
-
-        public void Update(Contacto entity)
+        catch (Exception ex)
         {
-            throw new NotImplementedException();
+            throw new Exception($"Error en la operación de base de datos: " +
+                $"{ex.Message}", ex);
         }
     }
+
+    public IEnumerable<Contacto> GetAll()
+    {
+        const string query = "SELECT Id, Nombre, Apellido, FechaNacimiento, Telefono, Email FROM Contactos";
+        var contactos = new List<Contacto>();
+
+        try
+        {
+            using var connection = new SqlConnection(_connectionString);
+            using var command = new SqlCommand(query, connection);
+            connection.Open();
+            using var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                contactos.Add(new Contacto
+                {
+                    Id = reader.GetInt32(0),
+                    Nombre = reader.GetString(1),
+                    Apellido = reader.GetString(2),
+                    FechaNacimiento = reader.GetDateTime(3),
+                    Telefono = reader.GetInt32(4),
+                    Email = reader.GetString(5)
+                });
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error al obtener contactos: {ex.Message}", ex);
+        }
+        return contactos;
+    }
+
+    public Contacto GetT(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Insert(Contacto entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Update(Contacto entity)
+    {
+        throw new NotImplementedException();
+    }
 }
+
