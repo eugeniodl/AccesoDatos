@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,11 +15,19 @@ namespace Agenda
     public partial class GuardarContactoForm : Form
     {
         private int? _id;
+        private readonly ContactoRepository _contactoRepository;
 
         public GuardarContactoForm(int? id = null)
         {
             InitializeComponent();
             _id = id;
+            string connectionString = 
+                ConfigurationManager.ConnectionStrings["constring"].ConnectionString;
+            _contactoRepository = new ContactoRepository(connectionString);
+            if(id != null )
+            {
+
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
