@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,9 +13,15 @@ namespace Agenda
 {
     public partial class AgendaForm : Form
     {
+        private readonly ContactoRepository _contactoRepository;
         public AgendaForm()
         {
             InitializeComponent();
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["constring"]
+                .ConnectionString;
+            _contactoRepository = new ContactoRepository(connectionString);
+            Actualizar();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -26,7 +33,7 @@ namespace Agenda
         {
             try
             {
-
+                dgvContactos.DataSource = _contactoRepository.GetAll();
             }
             catch (Exception ex)
             {
@@ -47,7 +54,7 @@ namespace Agenda
             {
                 try
                 {
-
+                    _contactoRepository.Delete((int)id);
                     Actualizar();
                 }
                 catch (Exception ex)
