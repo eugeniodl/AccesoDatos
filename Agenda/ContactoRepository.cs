@@ -131,22 +131,7 @@ public class ContactoRepository : IRepository<Contacto>
 
     public void Update(Contacto entity)
     {
-        const string query = "UPDATE Contactos " +
-            "SET Nombre = @nombre," +
-            "Apellido = @apellido, " +
-            "FechaNacimiento = @fechanacimiento, " +
-            "Telefono = @telefono, " +
-            "Email = @email WHERE Id = @id";
-
-        ExecuteNonQuery(query, cmd =>
-        {
-            cmd.Parameters.AddWithValue("@nombre", entity.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", entity.Apellido);
-            cmd.Parameters.AddWithValue("@fechanacimiento", entity.FechaNacimiento);
-            cmd.Parameters.AddWithValue("@telefono", entity.Telefono);
-            cmd.Parameters.AddWithValue("@email", entity.Email);
-            cmd.Parameters.AddWithValue("@id", entity.Id);
-        });
+        throw new NotImplementedException();
     }
 }
 
