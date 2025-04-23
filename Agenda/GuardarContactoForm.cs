@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,11 +15,47 @@ namespace Agenda
     public partial class GuardarContactoForm : Form
     {
         private int? _id;
+        private readonly ContactoRepository _contactoRepository;
 
         public GuardarContactoForm(int? id = null)
         {
             InitializeComponent();
             _id = id;
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["constring"]
+                .ConnectionString;
+            _contactoRepository = new ContactoRepository(connectionString);
+            if (_id != null)
+            {
+                CargarData();
+            }   
+        }
+
+        private void CargarData()
+        {
+            try
+            {
+                Contacto contacto = _contactoRepository.GetT((int)_id);
+                if (contacto != null)
+                {
+                    txtNombre.Text = contacto.Nombre;
+                    txtApellido.Text = contacto.Apellido;
+                    dtpFechaNacimiento.Value = contacto.FechaNacimiento;
+                    txtTelefono.Text = contacto.Telefono.ToString();
+                    txtEmail.Text = contacto.Email;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el contacto.", "Advertencia",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos del contacto: "
+                    + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -38,12 +75,12 @@ namespace Agenda
 
                     if (_id == null) // Nuevo contacto
                     {
-                        
+                        _contactoRepository.Insert(contacto);
                     }
                     else // Editar contacto
                     {
                         contacto.Id = (int)_id;
-                        
+                        _contactoRepository.Update(contacto);
                     }
 
                     DialogResult = DialogResult.OK; // Indica que se guardó correctamente
