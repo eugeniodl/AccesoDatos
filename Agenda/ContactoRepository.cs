@@ -19,7 +19,7 @@ namespace Agenda
         }
         public void Delete(int id)
         {
-            const string sql = @"DELETE FROM Contactos WHERE Id = @id";
+            const string sql = "DELETE FROM Contactos WHERE Id = @id";
 
             ExecuteNonQuery(sql, cmd =>
                 cmd.Parameters.AddWithValue("@id", id)
@@ -28,13 +28,7 @@ namespace Agenda
 
         public IEnumerable<Contacto> GetAll()
         {
-            const string sql = @"SELECT Id,
-                                        Nombre,
-	                                    Apellido,
-	                                    FechaNacimiento,
-	                                    Telefono,
-	                                    Email
-                                 FROM Contactos";
+            const string sql = "SELECT Id,Nombre,Apellido,FechaNacimiento,Telefono,Email FROM Contactos";
             var contactos = new List<Contacto>();
 
             try

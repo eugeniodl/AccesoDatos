@@ -24,9 +24,36 @@ namespace Agenda
             string connectionString = 
                 ConfigurationManager.ConnectionStrings["constring"].ConnectionString;
             _contactoRepository = new ContactoRepository(connectionString);
-            if(id != null )
+            if(_id != null )
             {
+                CargarData();
+            }
+        }
 
+        private void CargarData()
+        {
+            try
+            {
+                Contacto contacto = _contactoRepository.GetValue((int)_id);
+                if (contacto != null)
+                {
+                    txtNombre.Text = contacto.Nombre;
+                    txtApellido.Text = contacto.Apellido;
+                    dtpFechaNacimiento.Value = contacto.FechaNacimiento;
+                    txtTelefono.Text = contacto.Telefono.ToString();
+                    txtEmail.Text = contacto.Email;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el contacto.", "Advertencia",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos del contacto: " +
+                    ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -47,12 +74,12 @@ namespace Agenda
 
                     if (_id == null) // Nuevo contacto
                     {
-                        
+                        _contactoRepository.Insert(contacto);
                     }
                     else // Editar contacto
                     {
                         contacto.Id = (int)_id;
-                        
+                        _contactoRepository.Update(contacto);
                     }
 
                     DialogResult = DialogResult.OK; // Indica que se guardó correctamente
