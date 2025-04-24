@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda", "Agenda\Agenda.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAdapterApp", "DataAdapterApp\DataAdapterApp.csproj", "{BF56877C-C5F5-53D7-CFD2-EB4164AAB5A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo02", "Ejemplo02\Ejemplo02.csproj", "{18E75D36-F327-41A0-8653-F50AC5EEFA93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo03", "Ejemplo03\Ejemplo03.csproj", "{B2F893EB-BEB7-4B49-9A92-BD5D0D76183B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{BF56877C-C5F5-53D7-CFD2-EB4164AAB5A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF56877C-C5F5-53D7-CFD2-EB4164AAB5A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF56877C-C5F5-53D7-CFD2-EB4164AAB5A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18E75D36-F327-41A0-8653-F50AC5EEFA93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E75D36-F327-41A0-8653-F50AC5EEFA93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E75D36-F327-41A0-8653-F50AC5EEFA93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E75D36-F327-41A0-8653-F50AC5EEFA93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F893EB-BEB7-4B49-9A92-BD5D0D76183B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F893EB-BEB7-4B49-9A92-BD5D0D76183B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F893EB-BEB7-4B49-9A92-BD5D0D76183B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F893EB-BEB7-4B49-9A92-BD5D0D76183B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
