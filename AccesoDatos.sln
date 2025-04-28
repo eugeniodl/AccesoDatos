@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjemploAdoNet01", "EjemploA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agenda", "Agenda\Agenda.csproj", "{7AE9E0E4-07F5-42EA-802E-E138181339CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAdapterApp", "DataAdapterApp\DataAdapterApp.csproj", "{BF1E45DD-344A-4966-92B1-AEA2954B8F0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAdapterApp", "DataAdapterApp\DataAdapterApp.csproj", "{BF1E45DD-344A-4966-92B1-AEA2954B8F0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploEF01", "EjemploEF01\EjemploEF01.csproj", "{EB4B1A16-D2AC-4DD4-9C0F-F47F5A444476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{BF1E45DD-344A-4966-92B1-AEA2954B8F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF1E45DD-344A-4966-92B1-AEA2954B8F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF1E45DD-344A-4966-92B1-AEA2954B8F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4B1A16-D2AC-4DD4-9C0F-F47F5A444476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4B1A16-D2AC-4DD4-9C0F-F47F5A444476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4B1A16-D2AC-4DD4-9C0F-F47F5A444476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4B1A16-D2AC-4DD4-9C0F-F47F5A444476}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
