@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAdapterApp", "DataAdapt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploEF01", "EjemploEF01\EjemploEF01.csproj", "{917CB92D-1F51-908F-F422-B83910BC34A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploEF02", "EjemploEF02\EjemploEF02.csproj", "{C6E24541-0D0F-E0DB-69CC-7113393DF9EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{917CB92D-1F51-908F-F422-B83910BC34A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{917CB92D-1F51-908F-F422-B83910BC34A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{917CB92D-1F51-908F-F422-B83910BC34A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E24541-0D0F-E0DB-69CC-7113393DF9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E24541-0D0F-E0DB-69CC-7113393DF9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E24541-0D0F-E0DB-69CC-7113393DF9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E24541-0D0F-E0DB-69CC-7113393DF9EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
