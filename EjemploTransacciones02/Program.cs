@@ -66,3 +66,21 @@ catch(Exception ex)
 }
 
 // Recuperar los saldos actualizados
+using (var dbContext1 = new Bank1Context())
+using (var dbContext2 = new Bank2Context())
+{
+    var emitterBalance = dbContext1.Transactions
+                .Where(a => a.AccountNumber == X_ORIGIN_ACCOUNT)
+                .GroupBy(a => a.AccountNumber)
+                .Select(g => new { Balance = g.Sum(a => a.Credit) - g.Sum(a => a.Debit) })
+                .FirstOrDefault();
+
+    var receiverBalance = dbContext2.Transactions
+                .Where(a => a.AccountNumber == X_DESTINATION_ACCOUNT)
+                .GroupBy(a => a.AccountNumber)
+                .Select(g => new { Balance = g.Sum(a => a.Credit) - g.Sum(a => a.Debit) })
+                .FirstOrDefault();
+
+    Console.WriteLine($"Fondos del emisor: {emitterBalance?.Balance} " +
+        $"Fondos del receptor: {receiverBalance?.Balance}");
+}
